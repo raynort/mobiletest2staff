@@ -11,23 +11,6 @@ function deductBalance(acct,amt) {
 
 }
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
 
 Template.barcode_scanner.events({
 	'click button': function () {
@@ -88,4 +71,20 @@ Template.retrieve_time.helpers({
 	leave_time() {
 		return Template.instance().leave_time.get();
 	},
+});
+
+Template.add_item.onCreated(function timeOnCreated() {
+  // counter starts at 0
+  this.enter_time = new ReactiveVar("N.A.");
+  this.leave_time - new ReactiveVar("N.A.2");
+});
+
+
+Template.add_item.events({
+	'click button'(event, instance) {
+		var barcode = "0123456";
+		if (barcode) {
+			// add food item to user
+		}
+	}
 });
