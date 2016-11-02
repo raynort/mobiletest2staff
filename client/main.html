@@ -1,0 +1,60 @@
+<head>
+  <title>Munche Staff App</title>
+</head>
+
+<body>
+  <h1>Munche Staff System</h1>
+
+  {{> barcode_scanner}}
+  {{> retrieve_receipt}}
+  {{> make_payment}}
+  {{> retrieve_time}}
+
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
+
+<template name="barcode_scanner">
+  <button>Scan</button>
+</template>
+
+<template name="retrieve_receipt">
+  <table id="t01">
+      <tr id="t01">
+        <td id="t01"> Name </td>
+        <td id="t01"> Quantity </td>
+        <td id="t01"> Price </td>
+      </tr>
+      {{#each item}}
+      <tr id="t01" class="item">
+        <td id="t01" class="item">{{item_name}}</td>
+        <td id="t01" class="item">{{item_qty}}</td>
+        <td id="t01" class="item"> {{item_price}}</td>
+        </tr>
+      {{/each}}
+
+  </table>
+</template>
+
+<template name="retrieve_time">
+  <p> Customer entered at time {{enter_time}}</p>
+  <p> Customer left at time {{leave_time}}</p>
+  <button>Retrieve</button>
+</template>
+
+<template name="make_payment">
+  <button>Pay</button>
+</template>
